@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271C9183F19D00E9C13E1E5B /* Pods_ICU_Bed_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */; };
+		8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804136292B0CED96006E71F6 /* GoogleService-Info.plist */; };
 		80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */; };
 		80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */; };
 		80F9F3C02B07218900AEAF12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BF2B07218900AEAF12 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0149A39A4D2D6100C6307515 /* Pods-ICU Bed Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU Bed Finder.debug.xcconfig"; path = "Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder.debug.xcconfig"; sourceTree = "<group>"; };
+		466B3D6E3C78D740F5B62B63 /* Pods-ICU Bed Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU Bed Finder.release.xcconfig"; path = "Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder.release.xcconfig"; sourceTree = "<group>"; };
+		804136292B0CED96006E71F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80F9F3B82B07218900AEAF12 /* ICU Bed Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICU Bed Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		80F9F3C72B07218B00AEAF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80F9F3C92B07218B00AEAF12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80F9F3D12B072A6500AEAF12 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU_Bed_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271C9183F19D00E9C13E1E5B /* Pods_ICU_Bed_Finder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20CC19AE6BD8A6E219F39713 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		719A6E4CF485B9B24CCC972A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0149A39A4D2D6100C6307515 /* Pods-ICU Bed Finder.debug.xcconfig */,
+				466B3D6E3C78D740F5B62B63 /* Pods-ICU Bed Finder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		80F9F3AF2B07218900AEAF12 = {
 			isa = PBXGroup;
 			children = (
 				80F9F3BA2B07218900AEAF12 /* ICU Bed Finder */,
 				80F9F3B92B07218900AEAF12 /* Products */,
+				719A6E4CF485B9B24CCC972A /* Pods */,
+				20CC19AE6BD8A6E219F39713 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +84,7 @@
 		80F9F3BA2B07218900AEAF12 /* ICU Bed Finder */ = {
 			isa = PBXGroup;
 			children = (
+				804136292B0CED96006E71F6 /* GoogleService-Info.plist */,
 				80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */,
 				80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */,
 				80F9F3BF2B07218900AEAF12 /* ViewController.swift */,
@@ -77,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80F9F3CC2B07218B00AEAF12 /* Build configuration list for PBXNativeTarget "ICU Bed Finder" */;
 			buildPhases = (
+				F9F142A4E6B0C9C8EAFD626D /* [CP] Check Pods Manifest.lock */,
 				80F9F3B42B07218900AEAF12 /* Sources */,
 				80F9F3B52B07218900AEAF12 /* Frameworks */,
 				80F9F3B62B07218900AEAF12 /* Resources */,
+				C25D7AFE68C3376AB29C4F45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,12 +157,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F9F3C82B07218B00AEAF12 /* LaunchScreen.storyboard in Resources */,
+				8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */,
 				80F9F3C52B07218B00AEAF12 /* Assets.xcassets in Resources */,
 				80F9F3C32B07218900AEAF12 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C25D7AFE68C3376AB29C4F45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9F142A4E6B0C9C8EAFD626D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ICU Bed Finder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		80F9F3B42B07218900AEAF12 /* Sources */ = {
@@ -287,6 +359,7 @@
 		};
 		80F9F3CD2B07218B00AEAF12 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0149A39A4D2D6100C6307515 /* Pods-ICU Bed Finder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,6 +378,7 @@
 		};
 		80F9F3CE2B07218B00AEAF12 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 466B3D6E3C78D740F5B62B63 /* Pods-ICU Bed Finder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

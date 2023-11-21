@@ -5,6 +5,8 @@
 //  Created by Abdulla Rahman on 16/11/23.
 //
 
+import FirebaseAuth
+import Toast_Swift
 import UIKit
 class SignupController : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var inputEmail: UITextField!
@@ -37,13 +39,29 @@ class SignupController : UIViewController, UITextFieldDelegate {
         }
         
         else {
-            labelError.text = email! + password!
-            labelError.isHidden = false
+            Auth.auth().createUser(withEmail: email!, password: password!) { (authResult, error) in
+                if let error = error {
+                    self.labelError.text = error.localizedDescription
+                    self.labelError.isHidden = false
+                }
+                else{
+                    self.view.makeToast("Sign Up Successfull")
+                    DispatchQueue.main.asyncAfter(deadline: .now()+2.0){
+                        self.goLoginPage()
+                    }
+                }
+            }
+            
         }
     }
-    @IBAction func goTologin(_ sender: Any) {
+    
+    func goLoginPage(){
         let vc = storyboard?.instantiateViewController(identifier: "Login") as! ViewController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    @IBAction func goTologin(_ sender: Any) {
+        goLoginPage()
     }
 }

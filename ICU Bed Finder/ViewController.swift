@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Toast_Swift
 
 class ViewController: UIViewController {
 
@@ -32,9 +34,16 @@ class ViewController: UIViewController {
         
         
         else {
-            labelError.text = email! + password!
-            labelError.isHidden = false
-            labelError.text = "abdulla"
+            
+            Auth.auth().signIn(withEmail: email!, password: password!) { (authResult, error) in
+                if let error = error {
+                    self.labelError.text = error.localizedDescription
+                    self.labelError.isHidden = false
+                }
+                else{
+                    self.view.makeToast("Login Successfull")
+                }
+            }
         }
     }
     
