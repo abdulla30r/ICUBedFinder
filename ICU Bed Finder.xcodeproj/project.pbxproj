@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		271C9183F19D00E9C13E1E5B /* Pods_ICU_Bed_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */; };
 		8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804136292B0CED96006E71F6 /* GoogleService-Info.plist */; };
+		806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4BA92B0E16C00084A530 /* HomeController.swift */; };
+		80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */; };
 		80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */; };
 		80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */; };
-		80F9F3C02B07218900AEAF12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BF2B07218900AEAF12 /* ViewController.swift */; };
+		80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BF2B07218900AEAF12 /* LoginController.swift */; };
 		80F9F3C32B07218900AEAF12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F9F3C12B07218900AEAF12 /* Main.storyboard */; };
 		80F9F3C52B07218B00AEAF12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F9F3C42B07218B00AEAF12 /* Assets.xcassets */; };
-		80F9F3C82B07218B00AEAF12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F9F3C62B07218B00AEAF12 /* LaunchScreen.storyboard */; };
 		80F9F3D22B072A6500AEAF12 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3D12B072A6500AEAF12 /* SignupController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +23,14 @@
 		0149A39A4D2D6100C6307515 /* Pods-ICU Bed Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU Bed Finder.debug.xcconfig"; path = "Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder.debug.xcconfig"; sourceTree = "<group>"; };
 		466B3D6E3C78D740F5B62B63 /* Pods-ICU Bed Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU Bed Finder.release.xcconfig"; path = "Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder.release.xcconfig"; sourceTree = "<group>"; };
 		804136292B0CED96006E71F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		806B4BA92B0E16C00084A530 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		80F9F3B82B07218900AEAF12 /* ICU Bed Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICU Bed Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80F9F3BF2B07218900AEAF12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80F9F3BF2B07218900AEAF12 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		80F9F3C22B07218900AEAF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80F9F3C42B07218B00AEAF12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		80F9F3C72B07218B00AEAF12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80F9F3C92B07218B00AEAF12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80F9F3D12B072A6500AEAF12 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ICU_Bed_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,12 +89,13 @@
 				804136292B0CED96006E71F6 /* GoogleService-Info.plist */,
 				80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */,
 				80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */,
-				80F9F3BF2B07218900AEAF12 /* ViewController.swift */,
+				80F9F3BF2B07218900AEAF12 /* LoginController.swift */,
 				80F9F3C12B07218900AEAF12 /* Main.storyboard */,
 				80F9F3C42B07218B00AEAF12 /* Assets.xcassets */,
-				80F9F3C62B07218B00AEAF12 /* LaunchScreen.storyboard */,
 				80F9F3C92B07218B00AEAF12 /* Info.plist */,
 				80F9F3D12B072A6500AEAF12 /* SignupController.swift */,
+				80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */,
+				806B4BA92B0E16C00084A530 /* HomeController.swift */,
 			);
 			path = "ICU Bed Finder";
 			sourceTree = "<group>";
@@ -156,7 +159,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F9F3C82B07218B00AEAF12 /* LaunchScreen.storyboard in Resources */,
 				8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */,
 				80F9F3C52B07218B00AEAF12 /* Assets.xcassets in Resources */,
 				80F9F3C32B07218900AEAF12 /* Main.storyboard in Resources */,
@@ -212,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F9F3C02B07218900AEAF12 /* ViewController.swift in Sources */,
+				80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */,
 				80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */,
+				806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */,
+				80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */,
 				80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */,
 				80F9F3D22B072A6500AEAF12 /* SignupController.swift in Sources */,
 			);
@@ -228,14 +232,6 @@
 				80F9F3C22B07218900AEAF12 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		80F9F3C62B07218B00AEAF12 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80F9F3C72B07218B00AEAF12 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -46,7 +46,7 @@ class SignupController : UIViewController, UITextFieldDelegate {
                 }
                 else{
                     self.view.makeToast("Sign Up Successfull")
-                    DispatchQueue.main.asyncAfter(deadline: .now()+2.0){
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
                         self.goLoginPage()
                     }
                 }
@@ -56,7 +56,7 @@ class SignupController : UIViewController, UITextFieldDelegate {
     }
     
     func goLoginPage(){
-        let vc = storyboard?.instantiateViewController(identifier: "Login") as! ViewController
+        let vc = storyboard?.instantiateViewController(identifier: "Login") as! LoginController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }

@@ -9,9 +9,7 @@ import UIKit
 import FirebaseAuth
 import Toast_Swift
 
-class ViewController: UIViewController {
-
-    
+class LoginController: UIViewController {
 
     @IBOutlet weak var labelError: UILabel!
     @IBOutlet weak var inputEmail: UITextField!
@@ -19,8 +17,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         labelError.isHidden = true
+        // Do any additional setup after loading the view.
+        
     }
 
     @IBAction func didTapLogin(_ sender: Any) {
@@ -42,6 +41,11 @@ class ViewController: UIViewController {
                 }
                 else{
                     self.view.makeToast("Login Successfull")
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                        let vc = self.storyboard?.instantiateViewController(identifier: "Home") as! HomeController
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                    }
                 }
             }
         }
