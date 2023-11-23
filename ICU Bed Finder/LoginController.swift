@@ -56,4 +56,9 @@ class LoginController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
+    @IBAction func goToAdmin(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "AdminLogin") as! AdminLoginController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }

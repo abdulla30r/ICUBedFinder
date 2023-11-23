@@ -10,6 +10,8 @@
 		271C9183F19D00E9C13E1E5B /* Pods_ICU_Bed_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BD39303027CF95148C6A00 /* Pods_ICU_Bed_Finder.framework */; };
 		8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804136292B0CED96006E71F6 /* GoogleService-Info.plist */; };
 		806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4BA92B0E16C00084A530 /* HomeController.swift */; };
+		80B174762B0F7DBF006ADED1 /* AdminLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */; };
+		80B1747D2B0F8779006ADED1 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1747C2B0F8779006ADED1 /* DashboardController.swift */; };
 		80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */; };
 		80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */; };
 		80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */; };
@@ -24,6 +26,8 @@
 		466B3D6E3C78D740F5B62B63 /* Pods-ICU Bed Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ICU Bed Finder.release.xcconfig"; path = "Target Support Files/Pods-ICU Bed Finder/Pods-ICU Bed Finder.release.xcconfig"; sourceTree = "<group>"; };
 		804136292B0CED96006E71F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		806B4BA92B0E16C00084A530 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginController.swift; sourceTree = "<group>"; };
+		80B1747C2B0F8779006ADED1 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
 		80F9F3B82B07218900AEAF12 /* ICU Bed Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICU Bed Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				80F9F3D12B072A6500AEAF12 /* SignupController.swift */,
 				80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */,
 				806B4BA92B0E16C00084A530 /* HomeController.swift */,
+				80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */,
+				80B1747C2B0F8779006ADED1 /* DashboardController.swift */,
 			);
 			path = "ICU Bed Finder";
 			sourceTree = "<group>";
@@ -214,11 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80B1747D2B0F8779006ADED1 /* DashboardController.swift in Sources */,
 				80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */,
 				80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */,
 				806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */,
 				80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */,
 				80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */,
+				80B174762B0F7DBF006ADED1 /* AdminLoginController.swift in Sources */,
 				80F9F3D22B072A6500AEAF12 /* SignupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
