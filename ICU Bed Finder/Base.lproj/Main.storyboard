@@ -515,7 +515,7 @@
                         <outlet property="inputName" destination="riA-mD-idB" id="nPb-n0-LL7"/>
                         <outlet property="inputPostal" destination="nlv-L3-pn0" id="4T8-rt-Qbj"/>
                         <outlet property="inputStreet" destination="QxI-2l-8sU" id="pgx-dT-SlF"/>
-                        <outlet property="inputTotalBed" destination="Xy2-Zq-ukL" id="Toe-bn-Cti"/>
+                        <outlet property="inputTotalBed" destination="1Lw-V7-EVO" id="DNi-d1-LyS"/>
                         <outlet property="labelError" destination="rk1-po-Xxu" id="ATc-KI-uFS"/>
                     </connections>
                 </viewController>
