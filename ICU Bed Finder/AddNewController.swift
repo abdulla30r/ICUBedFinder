@@ -61,7 +61,7 @@ class AddNewController: UIViewController {
                                         let hospitalData = Hospital(name: name!, totalBed: totalValue, availableBed: availableValue, street: street!, district: district!, postalCode: postalValue, contact: contactValue)
                                         
                                         
-                                        print(hospitalData.dictionaryRepresentation)
+                                        //print(hospitalData.dictionaryRepresentation)
                                         
                                         
                                         Firestore.firestore().collection("Hospitals").addDocument(data: hospitalData.dictionaryRepresentation) {error in
@@ -123,6 +123,7 @@ class AddNewController: UIViewController {
                 }
                 else{
                     labelError.text = "Total Bed must be greater than 0"
+                    labelError.isHidden = false
                 }
             }
             else{

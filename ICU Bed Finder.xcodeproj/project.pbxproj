@@ -11,6 +11,7 @@
 		8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804136292B0CED96006E71F6 /* GoogleService-Info.plist */; };
 		806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4BA92B0E16C00084A530 /* HomeController.swift */; };
 		809C2EB62B1092DE00FC0F71 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C2EB52B1092DE00FC0F71 /* Hospital.swift */; };
+		809C2EDA2B10D23300FC0F71 /* ModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C2ED92B10D23300FC0F71 /* ModifyController.swift */; };
 		80B174762B0F7DBF006ADED1 /* AdminLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */; };
 		80B1747D2B0F8779006ADED1 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1747C2B0F8779006ADED1 /* DashboardController.swift */; };
 		80BC1D962B107EE8004496D1 /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC1D952B107EE8004496D1 /* AddNewController.swift */; };
@@ -29,6 +30,7 @@
 		804136292B0CED96006E71F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		806B4BA92B0E16C00084A530 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		809C2EB52B1092DE00FC0F71 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		809C2ED92B10D23300FC0F71 /* ModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyController.swift; sourceTree = "<group>"; };
 		80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginController.swift; sourceTree = "<group>"; };
 		80B1747C2B0F8779006ADED1 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		80BC1D952B107EE8004496D1 /* AddNewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
@@ -97,17 +99,18 @@
 				804136292B0CED96006E71F6 /* GoogleService-Info.plist */,
 				80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */,
 				80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */,
-				80F9F3BF2B07218900AEAF12 /* LoginController.swift */,
 				80F9F3C12B07218900AEAF12 /* Main.storyboard */,
 				80F9F3C42B07218B00AEAF12 /* Assets.xcassets */,
 				80F9F3C92B07218B00AEAF12 /* Info.plist */,
 				80F9F3D12B072A6500AEAF12 /* SignupController.swift */,
+				80F9F3BF2B07218900AEAF12 /* LoginController.swift */,
 				80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */,
 				806B4BA92B0E16C00084A530 /* HomeController.swift */,
 				80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */,
 				80B1747C2B0F8779006ADED1 /* DashboardController.swift */,
 				80BC1D952B107EE8004496D1 /* AddNewController.swift */,
 				809C2EB52B1092DE00FC0F71 /* Hospital.swift */,
+				809C2ED92B10D23300FC0F71 /* ModifyController.swift */,
 			);
 			path = "ICU Bed Finder";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */,
 				80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */,
 				809C2EB62B1092DE00FC0F71 /* Hospital.swift in Sources */,
+				809C2EDA2B10D23300FC0F71 /* ModifyController.swift in Sources */,
 				806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */,
 				80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */,
 				80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */,
