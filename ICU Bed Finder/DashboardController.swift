@@ -16,6 +16,11 @@ class DashboardController: UIViewController {
     }
     
 
+    @IBAction func addNew(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "AddNew") as! AddNewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
     @IBAction func AdminLogout(_ sender: Any) {
         self.view.makeToast("Logout Successfull")
         DispatchQueue.main.asyncAfter(deadline: .now()+1){
