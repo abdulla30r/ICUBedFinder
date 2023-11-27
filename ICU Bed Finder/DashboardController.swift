@@ -22,7 +22,7 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
         let  nib = UINib(nibName: "TableViewCell", bundle: nil)
         DataTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         fetchDataFromFirestore()
-
+        DataTable.reloadData()
     }
     
     func fetchDataFromFirestore() {
@@ -98,6 +98,43 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
         self.present(vc, animated: true)
     }
     
+     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] _, _ in
+                self?.removeCell(at: indexPath)
+            }
+            return [deleteAction]
+        }
+    
+    func removeCell(at indexPath: IndexPath) {
+            // Step 1: Remove data from your data source
+        let docRef = Firestore.firestore().collection("Hospitals").document(hospitalInfo[indexPath.row].id)
+            docRef.delete { error in
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted")
+                }
+            }
+            hospitalInfo.remove(at: indexPath.row)
+
+            // Step 2: Perform UITableView animation to visually swap the cell
+            DataTable.beginUpdates()
+            DataTable.deleteRows(at: [indexPath], with: .automatic)
+
+            // Step 3: Update the table view by reloading or removing the last row
+            if indexPath.row < hospitalInfo.count {
+                // Swap with the last cell
+                let lastIndexPath = IndexPath(row: hospitalInfo.count, section: 0)
+                DataTable.reloadRows(at: [lastIndexPath], with: .automatic)
+            } else {
+                // Remove the last cell
+                DataTable.deleteRows(at: [IndexPath(row: hospitalInfo.count, section: 0)], with: .automatic)
+            }
+            //let documentID = hospitalInfo[indexPath.row].id
+           
+            DataTable.endUpdates()
+    }
+
 
     @IBAction func addNew(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(identifier: "AddNew") as! AddNewController
@@ -108,7 +145,6 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
         self.view.makeToast("Logout Successfull")
         DispatchQueue.main.asyncAfter(deadline: .now()+1){
             let vc = self.storyboard?.instantiateViewController(identifier: "Login") as! LoginController
-            
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true)
         }

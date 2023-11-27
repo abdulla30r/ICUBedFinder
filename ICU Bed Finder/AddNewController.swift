@@ -68,8 +68,6 @@ class AddNewController: UIViewController {
                                             
                                             if let error = error {
                                                 
-                                                //Turjo ekhane alert dis//
-                                                //*******TURJO*******//
                                                 self.view.makeToast("Error: \(error)")
                                             }
                                             else{
@@ -85,14 +83,6 @@ class AddNewController: UIViewController {
                                                 
                                             }
                                         }
-                                        
-                                        //firebase add code
-                                        //
-                                        //complete
-                                        
-                                        
-                                        
-                                        
                                         
                                     }
                                     else{

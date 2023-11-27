@@ -19,9 +19,9 @@ class ModifyController: UIViewController {
     @IBOutlet weak var inputPostal: UITextField!
     @IBOutlet weak var inputContact: UITextField!
     
+    
     let db = Firestore.firestore().collection("Hospitals")
     var id: String? = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let did = id {
@@ -75,6 +75,37 @@ class ModifyController: UIViewController {
 
     @IBAction func btnUpdate(_ sender: Any) {
         
+        let docRef = Firestore.firestore().collection("Hospitals").document(id!)
+        let name = inputName.text
+        let totalBed = (Int)(inputTotalBed.text!)
+        let availableBed = (Int)(inputAvailableBed.text!)
+        let street = inputStreet.text
+        let district = inputDistrict.text
+        let contact = (Int)(inputContact.text!)
+        let postalCode = (Int)(inputPostal.text!)
+        
+        let hospitalData: [String: Any] = [
+                "name": name!,
+                "totalBed": totalBed!,
+                "availableBed": availableBed!,
+                "street": street!,
+                "district": district!,
+                "contact": contact!,
+                "postalCode": postalCode!
+            ]
+        
+        docRef.updateData(hospitalData) { error in
+            if let error = error {
+                self.view.makeToast("Error updating data: \(error)")
+            } else {
+                self.view.makeToast("Data updated successfully")
+                DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                    let vc = self.storyboard?.instantiateViewController(identifier: "Dashboard") as! DashboardController
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true)
+                }
+            }
+        }
     }
     
 
