@@ -19,6 +19,10 @@
 		80B1747D2B0F8779006ADED1 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1747C2B0F8779006ADED1 /* DashboardController.swift */; };
 		80BC1D962B107EE8004496D1 /* AddNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BC1D952B107EE8004496D1 /* AddNewController.swift */; };
 		80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */; };
+		80F7C6AC2B15031F00402614 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7C6A92B15031F00402614 /* LocationData.swift */; };
+		80F7C6AD2B15031F00402614 /* CurrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7C6AA2B15031F00402614 /* CurrentData.swift */; };
+		80F7C6AE2B15031F00402614 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7C6AB2B15031F00402614 /* WeatherData.swift */; };
+		80F7C6B12B15033200402614 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7C6B02B15033200402614 /* WeatherController.swift */; };
 		80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */; };
 		80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */; };
 		80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F9F3BF2B07218900AEAF12 /* LoginController.swift */; };
@@ -41,6 +45,10 @@
 		80B1747C2B0F8779006ADED1 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		80BC1D952B107EE8004496D1 /* AddNewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewController.swift; sourceTree = "<group>"; };
 		80D47BD42B0E0AB70093F63E /* LaunchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenController.swift; sourceTree = "<group>"; };
+		80F7C6A92B15031F00402614 /* LocationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		80F7C6AA2B15031F00402614 /* CurrentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentData.swift; sourceTree = "<group>"; };
+		80F7C6AB2B15031F00402614 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		80F7C6B02B15033200402614 /* WeatherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		80F9F3B82B07218900AEAF12 /* ICU Bed Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ICU Bed Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,10 @@
 				802559802B14CD0000F0C9B0 /* TableViewCell.xib */,
 				804136292B0CED96006E71F6 /* GoogleService-Info.plist */,
 				80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */,
+				80F7C6AA2B15031F00402614 /* CurrentData.swift */,
+				80F7C6A92B15031F00402614 /* LocationData.swift */,
+				80F7C6AB2B15031F00402614 /* WeatherData.swift */,
+				80F7C6B02B15033200402614 /* WeatherController.swift */,
 				80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */,
 				80F9F3C12B07218900AEAF12 /* Main.storyboard */,
 				80F9F3C42B07218B00AEAF12 /* Assets.xcassets */,
@@ -243,14 +255,18 @@
 				80B1747D2B0F8779006ADED1 /* DashboardController.swift in Sources */,
 				80F9F3C02B07218900AEAF12 /* LoginController.swift in Sources */,
 				80F9F3BC2B07218900AEAF12 /* AppDelegate.swift in Sources */,
+				80F7C6AC2B15031F00402614 /* LocationData.swift in Sources */,
 				809C2EB62B1092DE00FC0F71 /* Hospital.swift in Sources */,
+				80F7C6AE2B15031F00402614 /* WeatherData.swift in Sources */,
 				809C2EDA2B10D23300FC0F71 /* ModifyController.swift in Sources */,
 				806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */,
 				80D47BD52B0E0AB70093F63E /* LaunchScreenController.swift in Sources */,
 				80F9F3BE2B07218900AEAF12 /* SceneDelegate.swift in Sources */,
+				80F7C6B12B15033200402614 /* WeatherController.swift in Sources */,
 				804E64DC2B13965A00154C76 /* DetailController.swift in Sources */,
 				80BC1D962B107EE8004496D1 /* AddNewController.swift in Sources */,
 				80B174762B0F7DBF006ADED1 /* AdminLoginController.swift in Sources */,
+				80F7C6AD2B15031F00402614 /* CurrentData.swift in Sources */,
 				80F9F3D22B072A6500AEAF12 /* SignupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

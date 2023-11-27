@@ -12,6 +12,7 @@ import  FirebaseFirestore
 class DetailController: UIViewController {
     
     let db = Firestore.firestore().collection("Hospitals")
+    var location:String = ""
     
     @IBOutlet weak var lblContact: UILabel!
     @IBOutlet weak var lblPostalCode: UILabel!
@@ -20,7 +21,6 @@ class DetailController: UIViewController {
     @IBOutlet weak var lblAvailableBed: UILabel!
     @IBOutlet weak var lblname: UILabel!
     var id: String? = nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,8 @@ class DetailController: UIViewController {
                            let district = data?["district"] as? String,
                            let postalCode = data?["postalCode"] as? Int,
                            let contact = data?["contact"] as? Int {
+                            
+                            self.location = district
 
                             let hospital = Hospital(
                                 name: name,
@@ -80,5 +82,12 @@ class DetailController: UIViewController {
         self.present(vc, animated: true)
     }
     
-
+    @IBAction func showWeather(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "Weather") as! WeatherController
+        vc.location = location
+        vc.id = id!
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
 }
