@@ -1,29 +1,30 @@
 //
-//  ModifyController.swift
+//  DetailController.swift
 //  ICU Bed Finder
 //
-//  Created by Abdulla Rahman on 24/11/23.
+//  Created by Abdulla Rahman on 26/11/23.
 //
 
 import UIKit
-import  Firebase
+import  FirebaseFirestore
 
-class ModifyController: UIViewController {
 
-    @IBOutlet weak var labelError: UILabel!
-    @IBOutlet weak var inputName: UITextField!
-    @IBOutlet weak var inputTotalBed: UITextField!
-    @IBOutlet weak var inputStreet: UITextField!
-    @IBOutlet weak var inputAvailableBed: UITextField!
-    @IBOutlet weak var inputDistrict: UITextField!
-    @IBOutlet weak var inputPostal: UITextField!
-    @IBOutlet weak var inputContact: UITextField!
+class DetailController: UIViewController {
     
     let db = Firestore.firestore().collection("Hospitals")
+    
+    @IBOutlet weak var lblContact: UILabel!
+    @IBOutlet weak var lblPostalCode: UILabel!
+    @IBOutlet weak var lblStreet: UILabel!
+    @IBOutlet weak var lblTotalBed: UILabel!
+    @IBOutlet weak var lblAvailableBed: UILabel!
+    @IBOutlet weak var lblname: UILabel!
     var id: String? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let did = id {
             let docRef = db.document(did)
             docRef.getDocument { (document, error) in
@@ -52,13 +53,14 @@ class ModifyController: UIViewController {
                                 contact: contact
                             )
                             
-                            self.inputName.text = hospital.name
-                            self.inputTotalBed.text = String(hospital.totalBed)
-                            self.inputAvailableBed.text = String(hospital.availableBed)
-                            self.inputStreet.text = hospital.street
-                            self.inputDistrict.text = hospital.district
-                            self.inputPostal.text = String(hospital.postalCode)
-                            self.inputContact.text = String(hospital.contact)
+                            self.lblname.text = hospital.name
+                            self.lblTotalBed.text = String(hospital.totalBed)
+                            self.lblAvailableBed.text = String(hospital.availableBed)
+                            self.lblStreet.text = hospital.street + "," + hospital.district
+
+                            self.lblPostalCode.text = String(hospital.postalCode)
+                            self.lblContact.text = String(hospital.contact)
+
 
                         } else {
                             print("Invalid data format for document with ID: \(document.documentID)")
@@ -69,18 +71,14 @@ class ModifyController: UIViewController {
                 }
             }
         }
-        labelError.isHidden = true
+        // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func btnUpdate(_ sender: Any) {
-        
-    }
-    
-
-    @IBAction func goToDashboard(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(identifier: "Dashboard") as! DashboardController
+    @IBAction func backBtn(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "Home") as! HomeController
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
+    
+
 }

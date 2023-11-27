@@ -1,19 +1,20 @@
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
 
     var hospitals: [Hospital] = []
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
-        // Set the table view separator style to none
-        tableView.separatorStyle = .none
+        let  nib = UINib(nibName: "TableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
 
         // Fetch data from Firestore
         fetchDataFromFirestore()
@@ -31,7 +32,9 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
                 // Loop through the documents and populate the hospitals array
                 for document in querySnapshot!.documents {
+                    
                     let data = document.data()
+                    let did = document.documentID
 
                     // Assuming you have a Hospital initializer that requires parameters
                     if let name = data["name"] as? String,
@@ -51,6 +54,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
                             postalCode: postalCode,
                             contact: contact
                         )
+                        hospital.id = did
                         self.hospitals.append(hospital)
                     } else {
                         print("Invalid data format for document: \(document.documentID)")
@@ -67,23 +71,45 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         let hospital = hospitals[indexPath.row]
+        cell.district.text = hospital.district
+        cell.name.text = hospital.name
+        cell.AvailableBeds.text = "Available Beds: " + String(hospital.availableBed)
 
-        // Configure the appearance of the cell to give it a card-like effect
-        cell.textLabel?.text = hospital.name
-        cell.detailTextLabel?.text = "Total Beds: \(hospital.totalBed), Available Beds: \(hospital.availableBed), \(hospital.district)"
-
-        // Customize the appearance of the cell
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-        cell.backgroundColor = UIColor.white
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
-        cell.layer.shadowOpacity = 0.2
-        cell.layer.shadowRadius = 4
 
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let vc = self.storyboard?.instantiateViewController(identifier: "details") as! DetailController
+            vc.id = hospitals[indexPath.row].id
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            // Return the desired height for the cell at the specified indexPath
+        return 207.0 // Adjust this value as needed
+        }
+    
+    
+    @IBAction func logoutBtn(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            
+            self.view.makeToast("Logout Successfull")
+            DispatchQueue.main.asyncAfter(deadline: .now()+1){
+                let vc = self.storyboard?.instantiateViewController(identifier: "Login") as! LoginController
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+        }
+        catch let signOutError as NSError {
+            self.view.makeToast("Error: \(signOutError)")
+        }
+        
+       
+    }
+    
 }

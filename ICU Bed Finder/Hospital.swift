@@ -15,6 +15,8 @@ class Hospital {
     var district: String
     var postalCode: Int
     var contact: Int
+    var id : String = ""
+    
     
     init(name: String, totalBed: Int, availableBed: Int, street: String, district: String, postalCode: Int, contact: Int) {
         self.name = name
