@@ -13,7 +13,6 @@
 		8041362A2B0CED96006E71F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 804136292B0CED96006E71F6 /* GoogleService-Info.plist */; };
 		804E64DC2B13965A00154C76 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E64DB2B13965A00154C76 /* DetailController.swift */; };
 		806B4BAA2B0E16C00084A530 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B4BA92B0E16C00084A530 /* HomeController.swift */; };
-		80739B5F2B14AE6F00EAD027 /* Rafi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80739B5E2B14AE6F00EAD027 /* Rafi.storyboard */; };
 		809C2EB62B1092DE00FC0F71 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C2EB52B1092DE00FC0F71 /* Hospital.swift */; };
 		809C2EDA2B10D23300FC0F71 /* ModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C2ED92B10D23300FC0F71 /* ModifyController.swift */; };
 		80B174762B0F7DBF006ADED1 /* AdminLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */; };
@@ -36,7 +35,6 @@
 		804136292B0CED96006E71F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		804E64DB2B13965A00154C76 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		806B4BA92B0E16C00084A530 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		80739B5E2B14AE6F00EAD027 /* Rafi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rafi.storyboard; sourceTree = "<group>"; };
 		809C2EB52B1092DE00FC0F71 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		809C2ED92B10D23300FC0F71 /* ModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyController.swift; sourceTree = "<group>"; };
 		80B174752B0F7DBF006ADED1 /* AdminLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginController.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			children = (
 				8025597F2B14CD0000F0C9B0 /* TableViewCell.swift */,
 				802559802B14CD0000F0C9B0 /* TableViewCell.xib */,
-				80739B5E2B14AE6F00EAD027 /* Rafi.storyboard */,
 				804136292B0CED96006E71F6 /* GoogleService-Info.plist */,
 				80F9F3BB2B07218900AEAF12 /* AppDelegate.swift */,
 				80F9F3BD2B07218900AEAF12 /* SceneDelegate.swift */,
@@ -190,7 +187,6 @@
 				802559822B14CD0000F0C9B0 /* TableViewCell.xib in Resources */,
 				80F9F3C52B07218B00AEAF12 /* Assets.xcassets in Resources */,
 				80F9F3C32B07218900AEAF12 /* Main.storyboard in Resources */,
-				80739B5F2B14AE6F00EAD027 /* Rafi.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
