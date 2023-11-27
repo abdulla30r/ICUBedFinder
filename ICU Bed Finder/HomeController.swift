@@ -2,17 +2,23 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
-    var hospitals: [Hospital] = []
+    @IBOutlet var searchBox: UISearchBar!
     
+    var isSearch: Bool = false
+    var hospitals: [Hospital] = []
+    var SearchHospitals: [Hospital] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        searchBox.delegate = self
+        
         let  nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
 
@@ -67,19 +73,29 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hospitals.count
+        if(isSearch){
+            return SearchHospitals.count
+        }else{
+            return hospitals.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        let hospital = hospitals[indexPath.row]
+        
+        var hospital: Hospital
+        if(isSearch){
+            hospital = SearchHospitals[indexPath.row]
+        }
+        else{
+            hospital = hospitals[indexPath.row]
+        }
         cell.district.text = hospital.district
         cell.name.text = hospital.name
         cell.AvailableBeds.text = "Available Beds: " + String(hospital.availableBed)
-
-
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let vc = self.storyboard?.instantiateViewController(identifier: "details") as! DetailController
@@ -88,10 +104,27 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.present(vc, animated: true)
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             // Return the desired height for the cell at the specified indexPath
         return 207.0 // Adjust this value as needed
         }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        SearchHospitals = hospitals.filter { hospital in
+                return hospital.name.lowercased().prefix(searchText.count) == searchText.lowercased()
+            }
+            isSearch = true
+           tableView.reloadData()
+
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        isSearch = false
+        tableView.reloadData()
+    }
     
     
     @IBAction func logoutBtn(_ sender: Any) {

@@ -8,17 +8,23 @@
 import UIKit
 import FirebaseFirestore
 
-class DashboardController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DashboardController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     
 
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var DataTable: UITableView!
     var hospitalInfo: [Hospital] = []
-    
+    var SearchHospitals: [Hospital] = []
+    var isSearch: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         DataTable.dataSource = self
         DataTable.delegate = self
+        searchBar.delegate = self
+        
         let  nib = UINib(nibName: "TableViewCell", bundle: nil)
         DataTable.register(nib, forCellReuseIdentifier: "TableViewCell")
         fetchDataFromFirestore()
@@ -74,12 +80,22 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return hospitalInfo.count
+        if(isSearch){
+            return SearchHospitals.count
+        }else{
+            return hospitalInfo.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        let hospital = hospitalInfo[indexPath.row]
+        var hospital: Hospital
+        if(isSearch){
+            hospital = SearchHospitals[indexPath.row]
+        }
+        else{
+            hospital = hospitalInfo[indexPath.row]
+        }
         cell.district.text = hospital.district
         cell.name.text = hospital.name
         cell.AvailableBeds.text = "Available Beds: " + String(hospital.availableBed)
@@ -104,6 +120,23 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
             }
             return [deleteAction]
         }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        SearchHospitals = hospitalInfo.filter { hospital in
+                return hospital.name.lowercased().prefix(searchText.count) == searchText.lowercased()
+            }
+           isSearch = true
+           DataTable.reloadData()
+
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        isSearch = false
+        DataTable.reloadData()
+    }
+    
     
     func removeCell(at indexPath: IndexPath) {
             // Step 1: Remove data from your data source

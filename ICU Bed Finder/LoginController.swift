@@ -52,7 +52,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func goToReg(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "Login") as! LoginController
+        let vc = storyboard?.instantiateViewController(identifier: "Signup") as! SignupController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
