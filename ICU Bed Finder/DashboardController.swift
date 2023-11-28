@@ -99,6 +99,20 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
         cell.district.text = hospital.district
         cell.name.text = hospital.name
         cell.AvailableBeds.text = "Available Beds: " + String(hospital.availableBed)
+        
+
+        cell.layer.masksToBounds = true
+
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowRadius = 4.0
+        cell.layer.masksToBounds = false
+
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
+        
+        
         return cell
     }
     
@@ -163,7 +177,7 @@ class DashboardController: UIViewController, UITableViewDataSource, UITableViewD
                 // Remove the last cell
                 DataTable.deleteRows(at: [IndexPath(row: hospitalInfo.count, section: 0)], with: .automatic)
             }
-            //let documentID = hospitalInfo[indexPath.row].id
+            //let documentID = hospitalInfo#imageLiteral(resourceName: "simulator_screenshot_216FE5FE-D704-409C-B394-5E14A0EE671F.png")[indexPath.row].id
            
             DataTable.endUpdates()
     }

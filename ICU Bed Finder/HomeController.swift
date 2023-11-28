@@ -21,6 +21,8 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let  nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
+        
+        tableView.backgroundColor = UIColor.clear
 
         // Fetch data from Firestore
         fetchDataFromFirestore()
@@ -93,6 +95,21 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.district.text = hospital.district
         cell.name.text = hospital.name
         cell.AvailableBeds.text = "Available Beds: " + String(hospital.availableBed)
+        
+        
+
+        cell.layer.masksToBounds = true
+
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowRadius = 4.0
+        cell.layer.masksToBounds = false
+
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
+        
+        
         return cell
     }
     
@@ -131,7 +148,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do{
             try Auth.auth().signOut()
             
-            self.view.makeToast("Logout Successfull")
+            self.view.makeToast("Logout Successful")
             DispatchQueue.main.asyncAfter(deadline: .now()+1){
                 let vc = self.storyboard?.instantiateViewController(identifier: "Login") as! LoginController
                 vc.modalPresentationStyle = .fullScreen
